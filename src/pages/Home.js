@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -59,17 +60,18 @@ const imgReveal = {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
   const categoryKeys = Object.keys(categories);
 
   const featuredImages = [
-    { folder: 'Events', image: '082A1436.JPG' },
-    { folder: 'Fashion', image: '082A0435.jpg' },
-    { folder: 'portraits', image: '082A1939.jpg' },
-    { folder: 'Newborn', image: '_MG_3285.jpg' },
-    { folder: 'pet', image: 'IMG_0141.jpg' },
-    { folder: 'Sports', image: '082A5145.jpg' },
-    { folder: 'Product', image: '082A1219-2.jpg' },
-    { folder: 'Events', image: 'IMG_8790.jpg' },
+    { folder: 'Events', image: '082A1436.JPG', category: 'events' },
+    { folder: 'Fashion', image: '082A0435.jpg', category: 'fashion' },
+    { folder: 'portraits', image: '082A1939.jpg', category: 'portraits' },
+    { folder: 'Newborn', image: '_MG_3285.jpg', category: 'newborn' },
+    { folder: 'pet', image: 'IMG_0141.jpg', category: 'pet' },
+    { folder: 'Sports', image: '082A5145.jpg', category: 'sports' },
+    { folder: 'Product', image: '082A1219-2.jpg', category: 'product' },
+    { folder: 'Events', image: 'IMG_8790.jpg', category: 'events' },
   ];
 
   return (
@@ -149,6 +151,8 @@ const Home = () => {
                     transition: { duration: 0.35, ease }
                   }}
                   whileTap={{ scale: 0.97 }}
+                  onClick={() => navigate(`/category/${item.category}`)}
+                  style={{ cursor: 'pointer' }}
                 >
                   <img
                     src={`${process.env.PUBLIC_URL}/images/${item.folder}/${encodeURIComponent(item.image)}`}
