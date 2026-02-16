@@ -38,8 +38,12 @@ const ELFSIGHT_APP_ID = ''; // e.g. 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 const Testimonials = () => {
   useEffect(() => {
     // Re-initialize Elfsight widget if script already loaded
-    if (window.eapps) {
-      window.eapps.initWidgets();
+    try {
+      if (window.eapps && typeof window.eapps.initWidgets === 'function') {
+        window.eapps.initWidgets();
+      }
+    } catch (e) {
+      // Elfsight not fully loaded yet — it will self-initialize
     }
   }, []);
 
