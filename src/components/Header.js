@@ -69,7 +69,7 @@ const Header = ({ isHome = false, categoryName = '', theme = null }) => {
         transition={{ type: "spring", stiffness: 300, damping: 15 }}
       >
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          {isHome ? "Sai Manoj Maddala" : categoryName}
+          {isHome ? "Sai Manoj Madala" : categoryName}
         </Link>
       </motion.div>
       
