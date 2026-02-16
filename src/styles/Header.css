@@ -1,0 +1,138 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(15, 15, 35, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  transition: all 0.4s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  will-change: background, backdrop-filter;
+}
+
+.header-home {
+  background: transparent;
+  border-bottom: none;
+}
+
+.header-home.scrolled {
+  background: rgba(15, 15, 35, 0.95);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f5f5f5;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo a {
+  background: linear-gradient(135deg, #d4af37, #e8c547);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: #a0a0b0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.35s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, #e8c547);
+  transition: width 0.4s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f5f5f5;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateX(-5px);
+}
+
+.back-icon {
+  font-size: 1.2rem;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 4%;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .back-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .back-btn span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.875rem 4%;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+}
