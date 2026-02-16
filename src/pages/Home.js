@@ -71,7 +71,6 @@ const Home = () => {
     { folder: 'pet', image: 'IMG_0141.jpg', category: 'pet' },
     { folder: 'Sports', image: '082A5145.jpg', category: 'sports' },
     { folder: 'Product', image: '082A1219-2.jpg', category: 'product' },
-    { folder: 'Events', image: 'IMG_8790.jpg', category: 'events' },
   ];
 
   return (
