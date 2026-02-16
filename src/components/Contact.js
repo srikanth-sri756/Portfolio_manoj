@@ -131,9 +131,9 @@ const Contact = () => {
             variants={slideInLeft}
           >
             {[
-              { icon: 'fas fa-map-marker-alt', title: 'Location', text: 'Hyderabad, Telangana, India' },
-              { icon: 'fas fa-envelope', title: 'Email', text: 'saimanoj.madala@email.com' },
-              { icon: 'fas fa-phone', title: 'Phone', text: '+91 98765 43210' }
+              { icon: 'fas fa-map-marker-alt', title: 'Location', text: 'Berlin, Germany' },
+              { icon: 'fas fa-envelope', title: 'Email', text: 'madalasaimanoj478@gmail.com' },
+              { icon: 'fas fa-phone', title: 'Phone', text: '+49 15214180630' }
             ].map((info, index) => (
               <motion.div 
                 key={index}

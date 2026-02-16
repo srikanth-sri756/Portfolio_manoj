@@ -80,7 +80,7 @@ const About = () => {
             transition={{ duration: 0.4 }}
           >
             <motion.img 
-              src="/images/sai-manoj.png" 
+              src={`${process.env.PUBLIC_URL}/images/sai-manoj.png`} 
               alt="Sai Manoj Madala"
               initial={{ scale: 1.1 }}
               whileInView={{ scale: 1 }}

@@ -50,31 +50,29 @@
   background-clip: text;
 }
 
-.testimonials-container {
-  position: relative;
-  perspective: 1000px;
+/* ── Google Reviews Container ── */
+.google-reviews-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 200px;
 }
 
-.testimonials-slider {
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Elfsight widget overrides to match dark theme */
+.google-reviews-container [class*="elfsight"] {
+  background: transparent !important;
 }
 
-.testimonial-card {
+/* ── Placeholder (shown until Elfsight ID is set) ── */
+.reviews-placeholder {
+  text-align: center;
+  padding: 60px 30px;
   background: linear-gradient(145deg, rgba(30, 30, 30, 0.95), rgba(20, 20, 20, 0.95));
   border-radius: 25px;
-  padding: 50px;
-  text-align: center;
   border: 1px solid rgba(212, 175, 55, 0.2);
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-.testimonial-card::before {
+.reviews-placeholder::before {
   content: '';
   position: absolute;
   top: -1px;
@@ -84,108 +82,69 @@
   background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
-.quote-icon {
-  font-size: 3rem;
+.placeholder-icon {
+  font-size: 4rem;
   color: #d4af37;
   margin-bottom: 25px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
-.quote-text {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  font-style: italic;
-  margin-bottom: 30px;
-}
-
-.client-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.client-avatar {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #d4af37, #f4e5a3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #111;
-}
-
-.client-details {
-  text-align: left;
-}
-
-.client-details h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
+.reviews-placeholder h3 {
+  font-size: 1.6rem;
   color: #fff;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
-.client-details span {
-  font-size: 0.9rem;
-  color: #d4af37;
+.reviews-placeholder p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto 30px;
 }
 
-.testimonial-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+/* ── Section subtitle ── */
+.testimonials .section-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.05rem;
+  margin-top: 15px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Google Reviews CTA Button ── */
+.google-reviews-cta {
+  text-align: center;
   margin-top: 40px;
 }
 
-.nav-btn {
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid rgba(212, 175, 55, 0.5);
-  border-radius: 50%;
-  color: #d4af37;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
+.google-reviews-btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-}
-
-.nav-btn:hover {
-  background: #d4af37;
+  gap: 12px;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #d4af37, #f4e5a3);
   color: #111;
-  border-color: #d4af37;
-}
-
-.testimonial-dots {
-  display: flex;
-  gap: 10px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.dot.active {
-  background: #d4af37;
-  transform: scale(1.2);
+.google-reviews-btn i {
+  font-size: 1.3rem;
 }
 
-.dot:hover:not(.active) {
-  background: rgba(212, 175, 55, 0.5);
+.google-reviews-btn:hover {
+  background: linear-gradient(135deg, #f4e5a3, #d4af37);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Responsive */
@@ -194,21 +153,20 @@
     padding: 60px 0;
   }
 
-  .testimonial-card {
-    padding: 30px 20px;
+  .reviews-placeholder {
+    padding: 40px 20px;
   }
 
-  .quote-text {
-    font-size: 1.1rem;
+  .reviews-placeholder h3 {
+    font-size: 1.3rem;
   }
 
-  .quote-icon {
-    font-size: 2rem;
+  .placeholder-icon {
+    font-size: 3rem;
   }
 
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+  .google-reviews-btn {
+    padding: 14px 28px;
+    font-size: 0.95rem;
   }
 }

@@ -191,9 +191,9 @@ const Footer = ({ theme = null }) => {
           </motion.h4>
           <motion.div className="contact-info" variants={containerVariants}>
             {[
-              { icon: '📧', text: 'saimanojmadala@gmail.com' },
-              { icon: '📱', text: '+1 (555) 123-4567' },
-              { icon: '📍', text: 'Available Worldwide' }
+              { icon: '📧', text: 'madalasaimanoj478@gmail.com' },
+              { icon: '📱', text: '+49 15214180630' },
+              { icon: '📍', text: 'Berlin, Germany' }
             ].map((item, i) => (
               <motion.div 
                 key={i}

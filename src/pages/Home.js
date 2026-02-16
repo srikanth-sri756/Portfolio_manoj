@@ -151,7 +151,7 @@ const Home = () => {
                   whileTap={{ scale: 0.97 }}
                 >
                   <img
-                    src={`/images/${item.folder}/${item.image}`}
+                    src={`${process.env.PUBLIC_URL}/images/${item.folder}/${encodeURIComponent(item.image)}`}
                     alt={`Featured ${index + 1}`}
                     style={{
                       width: '100%',

@@ -102,7 +102,7 @@ const Gallery = ({ images, folderPath, theme }) => {
           >
             <div className="image-wrapper">
               <img 
-                src={`/images/${folderPath}/${image}`} 
+                src={`${process.env.PUBLIC_URL}/images/${folderPath}/${encodeURIComponent(image)}`} 
                 alt={`${folderPath} ${index + 1}`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 onError={(e) => console.error('Failed to load:', e.target.src)}
@@ -190,7 +190,7 @@ const Gallery = ({ images, folderPath, theme }) => {
             <AnimatePresence mode="wait" custom={direction}>
               <motion.img
                 key={currentIndex}
-                src={`/images/${folderPath}/${images[currentIndex]}`}
+                src={`${process.env.PUBLIC_URL}/images/${folderPath}/${encodeURIComponent(images[currentIndex])}`}
                 alt={`${folderPath} ${currentIndex + 1}`}
                 className="lightbox-image"
                 custom={direction}
